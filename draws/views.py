@@ -24,7 +24,6 @@ class AvailableDrawsAPIView(APIView):
         draws = Draw.objects.filter(
             is_active=True,
             schedules__is_active=True,
-            schedules__days_of_week__contains=[weekday],
         ).distinct()
 
         available = []
